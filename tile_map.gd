@@ -2,6 +2,7 @@ extends TileMap
 
 @export var real_scale = 3
 var paths_dots = []
+var number_card = 1
 # Called when the node enters the scene tree for the first time.
 
 func _ready():
@@ -48,5 +49,25 @@ func initialize_path():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_pressed("left_click"):
-		if !(local_to_map(get_viewport().get_mouse_position())/real_scale in paths_dots):
-			set_cell(0, local_to_map(get_viewport().get_mouse_position())/real_scale, 0, Vector2i(1, 2))
+		if !(local_to_map(get_viewport().get_mouse_position())/real_scale in paths_dots) and number_card !=0:
+			set_cell(0, local_to_map(get_viewport().get_mouse_position())/real_scale, 2, Vector2i(1, 2))
+			#number_card = 0
+	var water_power = 0
+	var cicle_array = [-1, 0, 1]
+	for x in get_used_cells_by_id(0, 2):
+		for y in get_used_cells_by_id(0, 2):
+			for z in cicle_array:
+				for d in cicle_array:
+					if x.x + z == y.x and x.y + d == y.y:
+						if z == 0 and d == 0:
+							water_power += 1
+						else:
+							water_power += 0.5
+					
+				
+			
+	$Label.text = str(water_power)
+
+
+func _on_control_change_card(number):
+	number_card = number # Replace with function body.

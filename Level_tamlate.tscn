@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cm4bigxvfy2a1"]
+[gd_scene load_steps=10 format=3 uid="uid://cm4bigxvfy2a1"]
 
 [ext_resource type="Texture2D" uid="uid://cg5ytw5akc0dj" path="res://assets/tilemap.png" id="1_ouca7"]
 [ext_resource type="Script" path="res://PathFollow2D.gd" id="2_cap1j"]
@@ -9,7 +9,6 @@
 texture = ExtResource("1_ouca7")
 separation = Vector2i(1, 1)
 9:2/0 = 0
-1:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l0c8n"]
 texture = ExtResource("1_ouca7")
@@ -21,10 +20,24 @@ separation = Vector2i(1, 1)
 2:6/0 = 0
 1:7/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aqr4b"]
+texture = ExtResource("1_ouca7")
+separation = Vector2i(1, 1)
+2:2/0 = 0
+1:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+0:3/0 = 0
+0:2/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_6jhdg"]
 navigation_layer_0/layers = 1
 sources/1 = SubResource("TileSetAtlasSource_l0c8n")
 sources/0 = SubResource("TileSetAtlasSource_1dx43")
+sources/2 = SubResource("TileSetAtlasSource_aqr4b")
 
 [sub_resource type="Curve2D" id="Curve2D_to8y6"]
 
@@ -36,6 +49,7 @@ collision_animatable = true
 navigation_visibility_mode = 2
 format = 2
 script = ExtResource("2_k2kts")
+metadata/_edit_horizontal_guides_ = [-56.0]
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_to8y6")
@@ -47,3 +61,7 @@ script = ExtResource("2_cap1j")
 [node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D"]
 scale = Vector2(0.163931, 0.146925)
 texture = ExtResource("2_kypy2")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0

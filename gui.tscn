@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cao5hg2uurbek"]
+
+[node name="GUI" type="MarginContainer"]
+offset_right = 110.0
+offset_bottom = 31.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 0
+alignment = 1
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Вода"
+
+[node name="Button2" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Огонь"
