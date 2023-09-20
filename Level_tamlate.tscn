@@ -65,3 +65,12 @@ texture = ExtResource("2_kypy2")
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="Button" type="Button" parent="."]
+offset_left = 14.0
+offset_top = 169.0
+offset_right = 66.0
+offset_bottom = 200.0
+text = "Моря"
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
